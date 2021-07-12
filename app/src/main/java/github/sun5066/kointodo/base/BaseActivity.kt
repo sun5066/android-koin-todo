@@ -8,7 +8,7 @@ import androidx.databinding.ViewDataBinding
 
 abstract class BaseActivity<VDB: ViewDataBinding>: AppCompatActivity() {
 
-    protected lateinit var mBinding: VDB
+    lateinit var mBinding: VDB
 
     @LayoutRes abstract fun getResourceId(): Int
     abstract fun initDataBinding()
