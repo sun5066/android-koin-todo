@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-parcelize'
     id 'kotlin-kapt'
 }
 
@@ -44,14 +45,19 @@ android {
 
 dependencies {
 
+    // ktx
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.4.21"
+
     // aac activity
     def activity_version = "1.2.3"
     implementation "androidx.activity:activity-ktx:$activity_version"
 
-    // aac recyclerview
+    // fragment
     def fragment_version = "1.3.5"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
+
+    // aac recyclerview
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
 
@@ -71,12 +77,12 @@ dependencies {
     testImplementation "androidx.room:room-testing:$room_version"
 
     // Annotation processor
+    //noinspection LifecycleAnnotationProcessorWithJava8
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
-    testImplementation "androidx.arch.core:core-testing:$arch_version"
 
     // coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
@@ -87,14 +93,16 @@ dependencies {
     implementation "io.insert-koin:koin-android:$koin_version"
     testImplementation "io.insert-koin:koin-test:$koin_version"
 
-    testImplementation 'org.mockito:mockito-core:3.11.2'
-    testImplementation 'android.arch.core:core-testing:1.1.1'
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // tdd
+    testImplementation 'org.mockito:mockito-core:3.11.2'
+    //noinspection GradleDependency
+    testImplementation "androidx.arch.core:core-testing:$arch_version"
     testImplementation 'junit:junit:4.13.2'
     kapt 'androidx.test.ext:junit:1.1.3'
 }

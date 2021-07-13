@@ -1,6 +1,7 @@
 package github.sun5066.kointodo.viewmodel
 
 import android.app.Application
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.LiveData
 import github.sun5066.kointodo.di.testAppModule
 import github.sun5066.kointodo.livedata.LiveDataTestObserver
@@ -25,6 +26,9 @@ internal abstract class ViewModelTest : KoinTest {
 
     @get: Rule
     val mockitoRule: MockitoRule = MockitoJUnit.rule()
+
+    @get: Rule
+    val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     @Mock
     private lateinit var context: Application

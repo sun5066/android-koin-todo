@@ -1,21 +1,30 @@
 package github.sun5066.kointodo.di
 
 import github.sun5066.kointodo.data.repository.TodoRepository
-import github.sun5066.kointodo.domain.todo.GetToDoListUseCase
-import github.sun5066.kointodo.domain.todo.InsertToDoListUseCase
+import github.sun5066.kointodo.domain.todo.*
 import github.sun5066.kointodo.repository.TestTodoRepositoryImpl
-import github.sun5066.kointodo.viewmodel.TodoViewModel
+import github.sun5066.kointodo.viewmodel.ToDoViewModel
+import github.sun5066.kointodo.viewmodel.detail.DetailMode
+import github.sun5066.kointodo.viewmodel.detail.DetailViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 internal val testAppModule = module {
 
     // viewModel
-    viewModel { TodoViewModel(get()) }
+    viewModel { ToDoViewModel(get(), get(), get()) }
+    viewModel { (detailMode: DetailMode, id: Long) ->
+        DetailViewModel(detailMode, id, get(), get(), get(), get())
+    }
 
     // UseCase
     factory { GetToDoListUseCase(get()) }
+    factory { GetToDoItemUseCase(get()) }
     factory { InsertToDoListUseCase(get()) }
+    factory { InsertToDoUseCase(get()) }
+    factory { UpdateToDoListUseCase(get()) }
+    factory { DeleteAllToDoItemUseCase(get()) }
+    factory { DeleteToDoItemUseCase(get()) }
 
     // Repository
     single<TodoRepository> { TestTodoRepositoryImpl() }

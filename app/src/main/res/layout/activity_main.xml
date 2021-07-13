@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="github.sun5066.kointodo.viewmodel.TodoViewModel" />
+            type="github.sun5066.kointodo.viewmodel.ToDoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
