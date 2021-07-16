@@ -27,16 +27,6 @@ internal val useCaseModule = module {
     factory { UpdateToDoListUseCase(get()) }
     factory { DeleteAllToDoItemUseCase(get()) }
     factory { DeleteToDoItemUseCase(get()) }
-
-    // Repository
-    single<TodoRepository> { TodoRepositoryImpl(get(), get()) }
-
-    single { provideDB(androidApplication()) }
-    single { provideToDoDao(get()) }
-
-    // viewModel
-    viewModel { ToDoViewModel(get(), get(), get()) }
-    viewModel { (detailMode: DetailMode, id: Long) -> DetailViewModel(detailMode, id, get(), get(), get(), get()) }
 }
 
 internal fun provideDB(context: Context): ToDoDataBase =
