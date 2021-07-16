@@ -9,7 +9,7 @@ import kotlinx.coroutines.Job
 
 internal abstract class BaseActivity<VM: BaseViewModel, VDB: ViewDataBinding>: AppCompatActivity() {
 
-    abstract val viewModel: VM
+    abstract val mViewModel: VM
     lateinit var mBinding: VDB
     lateinit var mFetchJob: Job
 
@@ -23,7 +23,7 @@ internal abstract class BaseActivity<VM: BaseViewModel, VDB: ViewDataBinding>: A
         mBinding = DataBindingUtil.setContentView(this, getResourceId())
         initDataBinding()
 
-        mFetchJob = viewModel.fetchData()
+        mFetchJob = mViewModel.fetchData()
         observeData()
     }
 

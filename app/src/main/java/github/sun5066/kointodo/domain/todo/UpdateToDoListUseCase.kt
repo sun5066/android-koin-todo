@@ -6,7 +6,7 @@ import github.sun5066.kointodo.domain.UseCase
 
 internal class UpdateToDoListUseCase(private val repository: TodoRepository): UseCase {
 
-    suspend operator fun invoke(toDoItem: ToDoEntity): Boolean {
-        return repository.updateToDo(toDoItem)
+    suspend operator fun invoke(toDoItem: ToDoEntity) {
+        repository.updateToDo(toDoItem)
     }
 }

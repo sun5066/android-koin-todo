@@ -5,7 +5,7 @@ import github.sun5066.kointodo.domain.UseCase
 
 internal class DeleteToDoItemUseCase(private val repository: TodoRepository) : UseCase {
 
-    suspend operator fun invoke(itemId: Long): Boolean {
-        return repository.deleteTodoItem(itemId)
+    suspend operator fun invoke(itemId: Long) {
+        repository.deleteTodoItem(itemId)
     }
 }

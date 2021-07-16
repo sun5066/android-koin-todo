@@ -50,12 +50,16 @@ internal class DetailViewModel(
         _toDoDetailLiveData.postValue(ToDoDetailState.Loading)
 
         try {
-            if (deleteToDoItemUseCase(id)) _toDoDetailLiveData.postValue(ToDoDetailState.Delete)
-            else _toDoDetailLiveData.postValue(ToDoDetailState.Error)
+            deleteToDoItemUseCase(id)
+            _toDoDetailLiveData.postValue(ToDoDetailState.Delete)
         } catch (e: java.lang.Exception) {
             e.printStackTrace()
             _toDoDetailLiveData.postValue(ToDoDetailState.Error)
         }
+    }
+
+    fun setModifyMode() = viewModelScope.launch {
+        _toDoDetailLiveData.postValue(ToDoDetailState.Modify)
     }
 
     fun writeToDo(title: String, description: String) = viewModelScope.launch {

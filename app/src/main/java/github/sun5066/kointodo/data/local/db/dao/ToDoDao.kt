@@ -15,15 +15,15 @@ interface ToDoDao {
     @Insert
     suspend fun insert(toDoEntity: ToDoEntity): Long
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE) // update or insert 용
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(todoList: List<ToDoEntity>)
 
     @Query("DELETE FROM ToDoEntity WHERE id=:id")
-    suspend fun delete(id: Long): Boolean
+    suspend fun delete(id: Long)
 
     @Query("DELETE FROM ToDoEntity")
     suspend fun deleteAll()
 
     @Update
-    suspend fun update(toDoEntity: ToDoEntity): Boolean
+    suspend fun update(toDoEntity: ToDoEntity)
 }
