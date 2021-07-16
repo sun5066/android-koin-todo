@@ -1,8 +1,8 @@
 package github.sun5066.kointodo.di
 
 import github.sun5066.kointodo.viewmodel.ToDoViewModel
-import github.sun5066.kointodo.viewmodel.detail.DetailMode
-import github.sun5066.kointodo.viewmodel.detail.DetailViewModel
+import github.sun5066.kointodo.utillity.enums.DetailMode
+import github.sun5066.kointodo.viewmodel.DetailViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

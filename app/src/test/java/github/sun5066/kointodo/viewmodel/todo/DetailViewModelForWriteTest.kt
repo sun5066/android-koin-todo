@@ -1,12 +1,12 @@
 package github.sun5066.kointodo.viewmodel.todo
 
 import github.sun5066.kointodo.data.entity.ToDoEntity
-import github.sun5066.kointodo.viewmodel.ToDoListState
+import github.sun5066.kointodo.utillity.states.ToDoListState
 import github.sun5066.kointodo.viewmodel.ToDoViewModel
 import github.sun5066.kointodo.viewmodel.ViewModelTest
-import github.sun5066.kointodo.viewmodel.detail.DetailMode
-import github.sun5066.kointodo.viewmodel.detail.DetailViewModel
-import github.sun5066.kointodo.viewmodel.detail.ToDoDetailState
+import github.sun5066.kointodo.utillity.enums.DetailMode
+import github.sun5066.kointodo.viewmodel.DetailViewModel
+import github.sun5066.kointodo.utillity.states.ToDoDetailState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.Test

@@ -1,4 +1,4 @@
-package github.sun5066.kointodo.viewmodel
+package github.sun5066.kointodo.utillity.states
 
 import github.sun5066.kointodo.data.entity.ToDoEntity
 

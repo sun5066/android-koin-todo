@@ -1,4 +1,4 @@
-package github.sun5066.kointodo
+package github.sun5066.kointodo.activity
 
 import android.app.Activity
 import android.view.LayoutInflater
@@ -11,14 +11,15 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isGone
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import github.sun5066.kointodo.R
 import github.sun5066.kointodo.base.BaseActivity
 import github.sun5066.kointodo.data.entity.ToDoEntity
 import github.sun5066.kointodo.databinding.ActivityMainBinding
 import github.sun5066.kointodo.databinding.ViewholderTodoItemBinding
 import github.sun5066.kointodo.extentions.showToast
-import github.sun5066.kointodo.viewmodel.ToDoListState
+import github.sun5066.kointodo.utillity.states.ToDoListState
 import github.sun5066.kointodo.viewmodel.ToDoViewModel
-import github.sun5066.kointodo.viewmodel.detail.DetailMode
+import github.sun5066.kointodo.utillity.enums.DetailMode
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -80,7 +81,13 @@ internal class MainActivity : BaseActivity<ToDoViewModel, ActivityMainBinding>()
         adapter.setToDoList(
             state.todoList,
             toDoItemClickListener = {
-                activityForResult.launch(DetailActivity.getIntent(this@MainActivity, it.id, DetailMode.DETAIL))
+                activityForResult.launch(
+                    DetailActivity.getIntent(
+                        this@MainActivity,
+                        it.id,
+                        DetailMode.DETAIL
+                    )
+                )
             }, toDoCheckListener = {
                 mViewModel.updateTodoEntity(it)
             }
@@ -144,12 +151,12 @@ internal class ToDoAdapter: RecyclerView.Adapter<ToDoAdapter.ToDoItemViewHolder>
     }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToDoAdapter.ToDoItemViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToDoItemViewHolder {
         val view = ViewholderTodoItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ToDoItemViewHolder(view, toDoItemClickListener)
     }
 
-    override fun onBindViewHolder(holder: ToDoAdapter.ToDoItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ToDoItemViewHolder, position: Int) {
         holder.bindData(toDoList[position])
         holder.bindView(toDoList[position])
     }

@@ -8,6 +8,7 @@ import github.sun5066.kointodo.data.entity.ToDoEntity
 import github.sun5066.kointodo.domain.todo.DeleteAllToDoItemUseCase
 import github.sun5066.kointodo.domain.todo.GetToDoListUseCase
 import github.sun5066.kointodo.domain.todo.UpdateToDoListUseCase
+import github.sun5066.kointodo.utillity.states.ToDoListState
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 

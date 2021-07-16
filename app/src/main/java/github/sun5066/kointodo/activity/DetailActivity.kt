@@ -1,16 +1,17 @@
-package github.sun5066.kointodo
+package github.sun5066.kointodo.activity
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.core.view.isGone
+import github.sun5066.kointodo.R
 import github.sun5066.kointodo.base.BaseActivity
 import github.sun5066.kointodo.databinding.ActivityDetailBinding
 import github.sun5066.kointodo.extentions.showToast
-import github.sun5066.kointodo.viewmodel.detail.DetailMode
-import github.sun5066.kointodo.viewmodel.detail.DetailViewModel
-import github.sun5066.kointodo.viewmodel.detail.ToDoDetailState
+import github.sun5066.kointodo.utillity.enums.DetailMode
+import github.sun5066.kointodo.utillity.states.ToDoDetailState
+import github.sun5066.kointodo.viewmodel.DetailViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
