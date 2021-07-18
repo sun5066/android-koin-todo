@@ -12,4 +12,4 @@ internal fun Activity.showToast(resId: Int, length: Int) {
     showToast(this, getString(resId), length)
 }
 
-internal fun showToast(context: Context, msg: String, length: Int) = Toast.makeText(context, msg, length)
+private fun showToast(context: Context, msg: String, length: Int) = Toast.makeText(context, msg, length)

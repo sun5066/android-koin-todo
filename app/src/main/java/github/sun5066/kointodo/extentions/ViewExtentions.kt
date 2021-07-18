@@ -10,7 +10,7 @@ internal fun View.setVisibility(visibility: Int) {
 
 internal fun View.keyBoardSwitch(flag: Boolean) {
     if (flag) showKeyboard(this)
-    else showKeyboard(this)
+    else hideKeyboard(this)
 }
 
 private fun showKeyboard(view: View) =
