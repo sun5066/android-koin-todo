@@ -18,4 +18,4 @@
 - MVVM(UseCase) + StatePattern + DataBinding + ViewBinding
 
 ### 참고
-패스트캠프
+패스트캠퍼스
