@@ -20,7 +20,6 @@ internal class DetailActivity : BaseActivity<DetailViewModel, ActivityDetailBind
     companion object {
         const val DETAIL_MODE_KEY = "ToDoId"
         const val TODO_ID_KEY = "DetailMode"
-        const val FETCH_REQUEST_CODE = 10
 
         fun getIntent(context: Context, detailModel: DetailMode) =
             Intent(context, DetailActivity::class.java).apply {
