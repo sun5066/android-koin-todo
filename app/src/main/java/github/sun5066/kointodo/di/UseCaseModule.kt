@@ -21,8 +21,3 @@ internal val useCaseModule = module {
     factory { DeleteAllToDoItemUseCase(get()) }
     factory { DeleteToDoItemUseCase(get()) }
 }
-
-internal fun provideDB(context: Context): ToDoDataBase =
-    Room.databaseBuilder(context, ToDoDataBase::class.java, ToDoDataBase.DB_NAME).build()
-
-internal fun provideToDoDao(database: ToDoDataBase) = database.toDoDao()
