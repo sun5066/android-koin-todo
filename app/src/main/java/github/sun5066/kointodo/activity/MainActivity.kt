@@ -16,7 +16,7 @@ import github.sun5066.kointodo.base.BaseActivity
 import github.sun5066.kointodo.data.entity.ToDoEntity
 import github.sun5066.kointodo.databinding.ActivityMainBinding
 import github.sun5066.kointodo.databinding.ViewholderTodoItemBinding
-import github.sun5066.kointodo.extentions.showToast
+import github.sun5066.kointodo.extensions.showToast
 import github.sun5066.kointodo.utillity.states.ToDoListState
 import github.sun5066.kointodo.viewmodel.ToDoViewModel
 import github.sun5066.kointodo.utillity.enums.DetailMode

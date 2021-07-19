@@ -8,7 +8,7 @@ import androidx.core.view.isGone
 import github.sun5066.kointodo.R
 import github.sun5066.kointodo.base.BaseActivity
 import github.sun5066.kointodo.databinding.ActivityDetailBinding
-import github.sun5066.kointodo.extentions.showToast
+import github.sun5066.kointodo.extensions.showToast
 import github.sun5066.kointodo.utillity.enums.DetailMode
 import github.sun5066.kointodo.utillity.states.ToDoDetailState
 import github.sun5066.kointodo.viewmodel.DetailViewModel

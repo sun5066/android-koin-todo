@@ -1,4 +1,4 @@
-package github.sun5066.kointodo.extentions
+package github.sun5066.kointodo.extensions
 
 import android.app.Activity
 import android.content.Context
