@@ -28,8 +28,8 @@ internal class ToDoViewModel(
     val toDoListLiveData: LiveData<ToDoListState> get() = _toDoListLiveData
 
     override fun fetchData(): Job = viewModelScope.launch {
-        _toDoListLiveData.postValue(ToDoListState.Loading)
-        _toDoListLiveData.postValue(ToDoListState.Success(getToDoListUseCase()))
+        setState(ToDoListState.Loading)
+        setState(ToDoListState.Success(getToDoListUseCase()))
     }
 
     fun updateTodoEntity(toDoItem: ToDoEntity) = viewModelScope.launch {
@@ -37,8 +37,12 @@ internal class ToDoViewModel(
     }
 
     fun deleteAll() = viewModelScope.launch {
-        _toDoListLiveData.postValue(ToDoListState.Loading)
+        setState(ToDoListState.Loading)
         deleteTodoUseCse()
-        _toDoListLiveData.postValue(ToDoListState.Success(getToDoListUseCase()))
+        setState(ToDoListState.Success(getToDoListUseCase()))
+    }
+
+    private fun setState(state: ToDoListState) {
+        _toDoListLiveData.postValue(state)
     }
 }
